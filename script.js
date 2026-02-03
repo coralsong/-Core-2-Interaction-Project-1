@@ -73,7 +73,7 @@ function setup() {
   angleMode(DEGREES);
 
   // Create snowflake objects
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 30; i++) {
     // Add a new snowflake object to the array
     snowflakes.push(new Snowflake());
   }
@@ -86,7 +86,7 @@ function draw() {
   background(0);
   fill(255, 0, 0);
 textSize(40);
-text("Test", width/2, height/2);
+// text("Test", width/2, height/2);
 
   // Update and display each snowflake in the array
   let currentTime = frameCount / 1000;
@@ -147,3 +147,19 @@ display() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+
+// User types on Webpage 
+let name = prompt("What is your name?");
+console.log(`Hello, ${name}!`);
+
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter your name: ", (name) => {
+    console.log(`Hello, ${name}!`);
+    rl.close();
+});
