@@ -135,15 +135,15 @@ class Snowflake {
   }
   
 
-// display() {
-//   fill(this.color);
-//   noStroke();
-//   textSize(this.size);
-//   textAlign(CENTER, CENTER);
-//   text(this.word, this.posX, this.posY);
-//   }
-// }
+display() {
+  fill(this.color);
+  noStroke();
+  textSize(this.size);
+  textAlign(CENTER, CENTER);
+  text(this.word, this.posX, this.posY);
+  }
+}
 
-// function windowResized() {
-//   resizeCanvas(windowWidth, windowHeight);
-// }
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
