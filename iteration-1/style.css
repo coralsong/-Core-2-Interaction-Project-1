@@ -26,7 +26,8 @@ input:focus {
 }
 
 #output {
-  margin-top: 20px;
+  margin-bottom: 16px;
   font-size: 18px;
-  color: #ffffff;
+  color: #333;
+  min-height: 24px; /* prevents layout jumping */
 }
