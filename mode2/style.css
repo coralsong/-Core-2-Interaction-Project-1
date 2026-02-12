@@ -1,38 +1,67 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-/* 
+
 canvas {
-  display: block;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 0 !important;
+  pointer-events: none; /* 👈 VERY IMPORTANT */
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-}
+#type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-ul li {
-  float: left;
-}
-
-ul li a {
-  display: block;
-  color: white;
+  color: #ffffff;
+  font-size: 20px;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  min-height: 24px;
+  z-index: 1;
 }
 
-ul li a:hover {
-  background-color: #111111;
+input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 24px;
+  border: 1px solid #000000;
+  outline: none;
 }
 
-h1 {
-    font-size: 0.833em;
-    padding: 2px 16px;
-} */
+input:focus {
+  border-color: #545454;
+}
+
+#output {
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #333;
+  min-height: 24px; /* prevents layout jumping */
+}
+
+
+#button {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  color: white;
+  font-size: 10px;
+  padding: 10px 20px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.search-container {
+  position: fixed;
+  bottom: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90vw, 320px);
+  z-index: 100; /* higher than everything */
+}

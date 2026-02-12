@@ -1,5 +1,7 @@
-// Define array to hold snowflake objects
-let snowflakes = [];
+// document.addEventListener("DOMContentLoaded", () => {
+
+// Define array to hold nouns
+let nouns = [];
 let words = [
   "bible",
   "John Wiclif",
@@ -75,11 +77,11 @@ function setup() {
   // Create snowflake objects
   for (let i = 0; i < 30; i++) {
     // Add a new snowflake object to the array
-    snowflakes.push(new Snowflake());
+    nouns.push(new Snowflake());
   }
 
   // Create screen reader accessible description
-  describe('Snowflakes falling on a black background.');
+  describe('Words falling on a black background.');
 }
 
 function draw() {
@@ -91,7 +93,7 @@ textSize(40);
   // Update and display each snowflake in the array
   let currentTime = frameCount / 1000;
 
-  for (let flake of snowflakes) {
+  for (let flake of nouns) {
     // Update each snowflake position and display
     flake.update(currentTime);
     flake.display();
@@ -124,11 +126,11 @@ class Snowflake {
     // x position follows a sine wave
     this.posX = width / 2 + this.radius * sin(angle);
 
-    // Different size snowflakes fall at different y speeds
+    // Different size nouns fall at different y speeds
     let ySpeed = 8 / (this.size * 0.5);
     this.posY += ySpeed;
 
-    // When snowflake reaches the bottom, move it to the top
+    // When noun reaches the bottom, move it to the top
     if (this.posY > height) {
       this.posY = -50;
     }
