@@ -1,5 +1,7 @@
+// allows javascript to run after the html page has loaded
 document.addEventListener("DOMContentLoaded", () => {
 
+  // text from the book of sand
   const messages = [
     "The line is made up of an infinite number of points;",
     "the plane is made up of an infinite number of lines;",
@@ -9,18 +11,25 @@ document.addEventListener("DOMContentLoaded", () => {
     "Mine, however, is true."
   ];
 
+  // messageIndex tracks which message user is on. 0=first message, 1=second message, etc.
   let messageIndex = 0;
   let charIndex = 0;
+  // enter button is prohibited while message is being typed out. true=message is being typed, false=message is done typing.
   let isTyping = false;
 
+  // allows javascript to get text from html
   const typeEl = document.getElementById("type");
   const inputEl = document.getElementById("searchInput");
 
+  // typing animation
   function typeMessage(text) {
+    // locks input
     isTyping = true;
+    // clears previous text
     typeEl.textContent = "";
     charIndex = 0;
 
+    // types one letter at a time with animation
     function typeChar() {
       if (charIndex < text.length) {
         typeEl.textContent += text[charIndex];
@@ -34,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     typeChar();
   }
 
+  // ignores capitalization, punctuation, extra space when user typed.
   function normalize(text) {
     return text
       .toLowerCase()
@@ -44,11 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   typeMessage(messages[messageIndex]);
 
+  // listens to every key pressed, but only react to "enter". 
   inputEl.addEventListener("keydown", (e) => {
     if (e.key !== "Enter") return;
     e.preventDefault();
     if (isTyping) return;
 
+    // reads what user typed.
     const userText = inputEl.value;
 
     if (normalize(userText) === normalize(messages[messageIndex])) {
@@ -61,7 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
         typeEl.textContent = "Done.";
         inputEl.disabled = true;
       }
+      // else=if user typed wrong.
     } else {
+      // stays on the same message of error.
       const currentMessage = messages[messageIndex];
 
       typeEl.textContent = "Try again.";
