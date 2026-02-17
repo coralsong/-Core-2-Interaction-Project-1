@@ -187,7 +187,7 @@ if (normalize(userText) === normalize(messages[messageIndex])) {
   inputEl.value = "";
   
 
-  // ✅ save progress
+  // save progress
   localStorage.setItem("bookOfSandIndex", messageIndex);
 
   if (messageIndex < messages.length) {

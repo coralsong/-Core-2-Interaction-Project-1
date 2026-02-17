@@ -1,18 +1,23 @@
+let messageIndex = 0;
+
+const savedIndex = localStorage.getItem("bookOfSandIndex");
+if (savedIndex !== null) {
+  messageIndex = parseInt(savedIndex, 10);
+}
+
 // allows javascript to run after the html page has loaded
 document.addEventListener("DOMContentLoaded", () => {
 
   // text from the book of sand
   const messages = [
     "I sell Bibles",
-    "the plane is made up ofI don’t only sell Bibles. I can show you a holy book I came across on the outskirts of Bikaner. It may interest you. an infinite number of lines;",
+    "I don’t only sell Bibles. I can show you a holy book I came across on the outskirts of Bikaner. It may interest you. an infinite number of lines;",
     "I don’t know. I’ve never found out.",
     "No, unquestionably this is not—more geometrico—the best way of beginning my story.",
     "To claim that it is true is nowadays the convention of every made-up story.",
     "Mine, however, is true."
   ];
 
-  // messageIndex tracks which message user is on. 0=first message, 1=second message, etc.
-  let messageIndex = 0;
   let charIndex = 0;
   // enter button is prohibited while message is being typed out. true=message is being typed, false=message is done typing.
   let isTyping = false;
@@ -63,16 +68,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // reads what user typed.
     const userText = inputEl.value;
 
-    if (normalize(userText) === normalize(messages[messageIndex])) {
-      messageIndex++;
-      inputEl.value = "";
+if (normalize(userText) === normalize(messages[messageIndex])) {
+  messageIndex++;
+  inputEl.value = "";
+  
 
-      if (messageIndex < messages.length) {
-        typeMessage(messages[messageIndex]);
-      } else {
-        typeEl.textContent = "Done.";
-        inputEl.disabled = true;
-      }
+  // save progress
+  localStorage.setItem("bookOfSandIndex", messageIndex);
+
+  if (messageIndex < messages.length) {
+    typeMessage(messages[messageIndex]);
+  } else {
+    typeEl.textContent = "Done.";
+    inputEl.disabled = true;
+    localStorage.removeItem("bookOfSandIndex"); // optional
+  }
+
       // else=if user typed wrong.
     } else {
       // stays on the same message of error.
@@ -85,4 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1200);
     }
   });
+
+  document.getElementById("reset").addEventListener("click", () => {
+  localStorage.removeItem("bookOfSandIndex");
+  location.reload();
+});
+
 });

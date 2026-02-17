@@ -52,7 +52,7 @@ input:focus {
   top: 3%;
   right: 3%;
   color: white;
-  text-decoration: none;
+  text-decoration-line: none;
   font-size: 10px;
   padding: 10px 20px;
   cursor: pointer;
@@ -66,4 +66,9 @@ input:focus {
   font-size: 10px;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+a {
+  text-decoration-line: none;
+  color: white;
 }
