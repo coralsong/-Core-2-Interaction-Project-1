@@ -77,12 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "I propose a swap",
     "I’ll offer you the amount of my pension check, which I’ve just collected, and my black-letter Wiclif Bible. I inherited it from my ancestors.",
     "* He turned the leaves and studied the title page with all the fervor of a true bibliophile. *",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
   ];
 
   let charIndex = 0;
