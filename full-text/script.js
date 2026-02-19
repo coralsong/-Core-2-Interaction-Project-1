@@ -1,3 +1,4 @@
+// 0 = start at first sentence
 let messageIndex = 0;
 
 const savedIndex = localStorage.getItem("bookOfSandIndex");
