@@ -107,10 +107,10 @@ class Snowflake {
   this.posY = random(-height, 0);
   this.initialAngle = random(0, 360);
 
-  this.size = random(10, 20); // text size now
+  this.size = random(10, 20);
   this.radius = sqrt(random(pow(width / 2, 2)));
 
-  this.word = random(words); // 👈 new
+  this.word = random(words);
   this.color = color(random(200, 256));
 }
 
