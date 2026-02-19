@@ -196,7 +196,7 @@ if (normalize(userText) === normalize(messages[messageIndex])) {
   } else {
     typeEl.textContent = "Done.";
     inputEl.disabled = true;
-    localStorage.removeItem("bookOfSandIndex"); // optional
+    localStorage.removeItem("bookOfSandIndex");
   }
 
       // else=if user typed wrong.
