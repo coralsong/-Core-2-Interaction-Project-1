@@ -82,6 +82,7 @@ angleMode(DEGREES);
   input = createInput('');
   input.position(550, 640);
   input.size(300);
+  input.attribute('placeholder', 'eliminate the words...');
 
   end = createA("http://endless.horse/", "here's a little gift...");
 end.position(550, 700);
