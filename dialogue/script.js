@@ -9,7 +9,7 @@ if (savedIndex !== null) {
 document.addEventListener("DOMContentLoaded", () => {
 
   const endLink = document.createElement("a");
-endLink.href = "http://endless.horse/";
+endLink.href = "https://coralsong.github.io/Core2-Prj1/falling/";
 endLink.textContent = "here’s a little gift";
 endLink.target = "_blank";
 

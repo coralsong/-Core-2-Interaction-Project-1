@@ -12,7 +12,7 @@ if (savedIndex !== null) {
 document.addEventListener("DOMContentLoaded", () => {
 
   const end = document.createElement("a");
-  end.href = "http://endless.horse/";
+  end.href = "https://coralsong.github.io/Core2-Prj1/dialogue/";
   end.textContent = "here's a little gift...";
   end.target = "_blank";
 
